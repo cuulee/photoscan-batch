@@ -52,4 +52,5 @@ ortho.tif is your orthophoto, enjoy!
 ## Note on 16bit tif
 
 When you use raw photos from DJI drones (DNG format), Photoscan will generate 16bit tif. It can cause troubles on later usage and processing. So, you can use gdal to convert it to 8bit (and also to JPEG compression for easier upload to OpenAerialMap).
+
 ```gdal_translate -of GTiff -ot Byte -scale 0 65535 0 255 -co "COMPRESS=JPEG" -co "JPEG_QUALITY=95" ortho.tif ortho_8bit.tif```
