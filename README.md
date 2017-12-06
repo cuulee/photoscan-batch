@@ -27,8 +27,9 @@ tree ~/osm/2017.04.27
 So, to create an orthophoto we should cd to the dir of this repo and run the following command:
 ```~/soft/photoscan/photoscan.sh -platform offscreen -r process.py ~/osm/2017.04.27```
 
-After the start of the script we will see very verbose log in STDOUT output of the script and minimalistic log in the log.txt
-After script finishes the project tree should look like this:
+After the start of the script we will see very verbose log in STDOUT output of the script and minimalistic log in the log.txt.
+
+After the finish of the script the project tree should look like this:
 ```
 tree ~/osm/2017.04.27
 ~/osm/2017.04.27
