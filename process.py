@@ -129,7 +129,7 @@ def photoscanProcess(root_path):
         logAction("Using the existing chunk '{}'".format(chunk.label))
     else:
         chunk = doc.addChunk()
-        chunk.crs = PhotoScan.CoordinateSystem("EPSG::4612")
+        chunk.crs = PhotoScan.CoordinateSystem("EPSG::4326")
         logAction("Created the new chunk '{}'".format(chunk.label))
     ################################################################################################
 
