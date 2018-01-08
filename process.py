@@ -108,6 +108,13 @@ def buildOrtho(chunk):
         projection=chunk.crs,
         progress=progress)
 
+def exportDem(chunk, root_path):
+    chunk.exportDem(
+    root_path + '/dem.tif',
+    image_format=PhotoScan.ImageFormatTIFF,
+    tiff_big=True,
+    progress=progress)
+
 def exportOrtho(chunk, root_path):
     chunk.exportOrthomosaic(
     root_path + '/ortho.tif',
@@ -175,6 +182,11 @@ def photoscanProcess(root_path):
     t = datetime.datetime.now()
     exportOrtho(chunk, root_path)
     logAction("Exported orthomosaic ({})".format(datetime.datetime.now()-t))
+
+    logAction("Started exporting dem")
+    t = datetime.datetime.now()
+    exportDem(chunk, root_path)
+    logAction("Exported dem ({})".format(datetime.datetime.now()-t))
 
 if len(sys.argv) < 2:
     usage()
